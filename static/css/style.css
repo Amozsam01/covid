@@ -1,0 +1,82 @@
+/* General Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 6rem 0;
+    background-image: linear-gradient(rgba(0, 123, 255, 0.9), rgba(0, 123, 255, 0.7)), url('https://cdn.pixabay.com/photo/2020/03/27/21/31/coronavirus-4975575_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Card hover effects */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Statistics cards */
+.card-title {
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding: 4rem 0;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+}
+
+/* Assessment quiz styles */
+.question-slide {
+    transition: opacity 0.3s;
+}
+
+/* Contact form styles */
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Smooth transitions for theme toggle */
+.navbar, .card, .btn, .alert, .progress, .accordion-button {
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Social links hover effect */
+.social-links a {
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    opacity: 0.8;
+}
+
+/* Dark theme specific adjustments */
+[data-bs-theme="dark"] .bg-light {
+    background-color: #343a40 !important;
+}
+
+/* Additional utility classes */
+.shadow-hover:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
