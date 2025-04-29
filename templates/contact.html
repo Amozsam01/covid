@@ -1,0 +1,293 @@
+{% extends 'base.html' %}
+
+{% block title %} - Contact & Resources{% endblock %}
+
+{% block content %}
+    <!-- Header Section -->
+    <section class="py-5 bg-success text-light text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Contact & Resources</h1>
+            <p class="lead">Find important contacts and helpful resources for COVID-19</p>
+        </div>
+    </section>
+    
+    <!-- Emergency Contacts Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Emergency Contacts</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-phone-alt text-danger fa-3x mb-3"></i>
+                            <h3 class="card-title">Emergency Hotlines</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>Emergency Services:</strong> 911</li>
+                                <li class="mb-2"><strong>COVID-19 Hotline:</strong> 1-800-123-4567</li>
+                                <li><strong>Health Department:</strong> 1-888-987-6543</li>
+                            </ul>
+                            <div class="alert alert-info mt-3 mb-0">
+                                <small>Available 24/7 for COVID-19 emergencies and information</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-hospital text-primary fa-3x mb-3"></i>
+                            <h3 class="card-title">Testing Centers</h3>
+                            <p>Find your nearest COVID-19 testing location:</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>Testing Info:</strong> 1-800-GET-TEST</li>
+                                <li><strong>Online Directory:</strong> <a href="#" class="text-decoration-none">Find Testing Centers</a></li>
+                            </ul>
+                            <div class="alert alert-info mt-3 mb-0">
+                                <small>Many locations offer both PCR and rapid antigen testing</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-syringe text-success fa-3x mb-3"></i>
+                            <h3 class="card-title">Vaccination Centers</h3>
+                            <p>Schedule your COVID-19 vaccination:</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>Vaccine Hotline:</strong> 1-800-VAX-INFO</li>
+                                <li><strong>Online Booking:</strong> <a href="#" class="text-decoration-none">Schedule Appointment</a></li>
+                            </ul>
+                            <div class="alert alert-info mt-3 mb-0">
+                                <small>COVID-19 vaccines are safe, effective, and free to all eligible individuals</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Health Resources Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Trusted Resources</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <img src="https://www.who.int/images/default-source/default-album/who-emblem-rgb.png?sfvrsn=877bb56_0" 
+                                 alt="WHO Logo" class="img-fluid mb-3" style="height: 80px;">
+                            <h3 class="card-title">World Health Organization</h3>
+                            <p class="card-text">Official global health guidelines and information about COVID-19.</p>
+                            <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target="_blank" class="btn btn-outline-primary">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <img src="https://www.cdc.gov/homepage/images/cdclogo.svg" 
+                                 alt="CDC Logo" class="img-fluid mb-3" style="height: 80px;">
+                            <h3 class="card-title">CDC</h3>
+                            <p class="card-text">Centers for Disease Control and Prevention resources and guidance.</p>
+                            <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank" class="btn btn-outline-primary">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <img src="https://www.unicef.org/sites/default/files/styles/logo/public/UNICEF-Logo-1200x630.jpg" 
+                                 alt="UNICEF Logo" class="img-fluid mb-3" style="height: 80px;">
+                            <h3 class="card-title">UNICEF</h3>
+                            <p class="card-text">Information about COVID-19's impact on children and families.</p>
+                            <a href="https://www.unicef.org/coronavirus/covid-19" target="_blank" class="btn btn-outline-primary">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <img src="https://media.ifrc.org/ifrc/wp-content/uploads/sites/5/2017/01/IFRC-Facebook-default.png" 
+                                 alt="Red Cross Logo" class="img-fluid mb-3" style="height: 80px;">
+                            <h3 class="card-title">Red Cross</h3>
+                            <p class="card-text">COVID-19 emergency response and community support resources.</p>
+                            <a href="https://www.redcross.org/about-us/news-and-events/news/2020/coronavirus-safety-and-readiness-tips-for-you.html" target="_blank" class="btn btn-outline-primary">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Form Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-5">
+                            <h2 class="text-center mb-4">Contact Us</h2>
+                            <p class="text-center mb-4">Have questions or need more information? Get in touch with us.</p>
+                            
+                            <form id="contact-form">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="symptoms">Symptom Information</option>
+                                        <option value="testing">Testing Information</option>
+                                        <option value="vaccination">Vaccination Information</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Your Message</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                </div>
+                            </form>
+                            
+                            <div id="form-success" class="alert alert-success mt-4" style="display: none;">
+                                <i class="fas fa-check-circle me-2"></i> Thank you for your message! We will get back to you soon.
+                            </div>
+                            <div id="form-error" class="alert alert-danger mt-4" style="display: none;">
+                                <i class="fas fa-exclamation-circle me-2"></i> There was an error sending your message. Please try again later.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="accordion" id="covid-faq">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                    What are the main symptoms of COVID-19?
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#covid-faq">
+                                <div class="accordion-body">
+                                    The most common symptoms include fever, dry cough, and fatigue. Other symptoms can include loss of taste or smell, headache, sore throat, aches and pains, and more. Symptoms can range from mild to severe, and some people may be infected without showing any symptoms at all.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    How does COVID-19 spread?
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#covid-faq">
+                                <div class="accordion-body">
+                                    COVID-19 spreads primarily through respiratory droplets when an infected person coughs, sneezes, talks, or breathes. It can also spread by touching surfaces contaminated with the virus and then touching your face. The virus can spread from people who are infected but don't have symptoms (asymptomatic) or before they develop symptoms (presymptomatic).
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    Are COVID-19 vaccines safe?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#covid-faq">
+                                <div class="accordion-body">
+                                    Yes, COVID-19 vaccines approved by regulatory authorities have undergone rigorous testing to ensure they meet safety standards. Like all vaccines, COVID-19 vaccines can cause side effects, but most are mild and temporary (e.g., pain at injection site, fatigue, headache). Serious side effects are extremely rare, and the benefits of vaccination in preventing serious illness and death from COVID-19 far outweigh the risks.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                    How effective are masks in preventing COVID-19?
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#covid-faq">
+                                <div class="accordion-body">
+                                    When worn correctly, masks help reduce the spread of COVID-19. They act as a barrier to prevent respiratory droplets from reaching others when the wearer coughs, sneezes, talks, or breathes. The effectiveness depends on the type of mask, how well it fits, and how consistently it's worn. N95/KN95 masks offer the highest protection, followed by surgical masks and well-made cloth masks.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                    What should I do if I think I have COVID-19?
+                                </button>
+                            </h2>
+                            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#covid-faq">
+                                <div class="accordion-body">
+                                    If you develop symptoms of COVID-19, you should:
+                                    <ol>
+                                        <li>Self-isolate immediately to avoid spreading the virus to others</li>
+                                        <li>Contact your healthcare provider or local health department for guidance</li>
+                                        <li>Get tested for COVID-19</li>
+                                        <li>Monitor your symptoms and seek emergency medical care if you experience severe symptoms like difficulty breathing</li>
+                                        <li>Follow the advice of healthcare professionals regarding treatment and isolation duration</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Handle contact form submission
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+        const formError = document.getElementById('form-error');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simulate form submission
+                setTimeout(function() {
+                    contactForm.reset();
+                    formSuccess.style.display = 'block';
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(function() {
+                        formSuccess.style.display = 'none';
+                    }, 5000);
+                }, 1000);
+            });
+        }
+    });
+</script>
+{% endblock %}
