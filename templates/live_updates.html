@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+
+{% block title %} - Live Updates{% endblock %}
+
+{% block head %}
+<style>
+    #map-container {
+        min-height: 400px;
+    }
+    .country-card {
+        transition: transform 0.3s;
+    }
+    .country-card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <!-- Header Section -->
+    <section class="py-5 bg-primary text-light text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Live COVID-19 Updates</h1>
+            <p class="lead">Track real-time statistics and data from around the world</p>
+        </div>
+    </section>
+    
+    <!-- Country Selection Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mx-auto">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title mb-3">Select a Country</h3>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
+                                <select id="country-selector" class="form-select form-select-lg">
+                                    <option value="">Loading countries...</option>
+                                </select>
+                                <button id="update-data" class="btn btn-primary">
+                                    <i class="fas fa-sync-alt me-2"></i>Update
+                                </button>
+                            </div>
+                            <div class="form-text">Select a country to view detailed COVID-19 statistics</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Selected Country Data -->
+            <div id="country-data-container" class="mb-5" style="display: none;">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 text-center mb-3 mb-md-0">
+                                <img id="country-flag" src="" alt="Country Flag" class="img-fluid rounded mb-2" style="max-height: 100px;">
+                                <h3 id="country-name" class="mb-0">Country Name</h3>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="card border-0 bg-light h-100">
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Confirmed Cases</h5>
+                                                <p id="country-cases" class="display-6 text-danger mb-0">0</p>
+                                                <small class="text-muted">Today: <span id="country-today-cases" class="text-danger">0</span></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card border-0 bg-light h-100">
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Recoveries</h5>
+                                                <p id="country-recovered" class="display-6 text-success mb-0">0</p>
+                                                <small class="text-muted">Today: <span id="country-today-recovered" class="text-success">0</span></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card border-0 bg-light h-100">
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Deaths</h5>
+                                                <p id="country-deaths" class="display-6 text-dark mb-0">0</p>
+                                                <small class="text-muted">Today: <span id="country-today-deaths" class="text-dark">0</span></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row g-3 mt-1">
+                                    <div class="col-md-4">
+                                        <div class="card border-0 bg-light h-100">
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Active Cases</h5>
+                                                <p id="country-active" class="display-6 text-warning mb-0">0</p>
+                                                <small class="text-muted">Critical: <span id="country-critical" class="text-warning">0</span></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card border-0 bg-light h-100">
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Tests</h5>
+                                                <p id="country-tests" class="display-6 text-info mb-0">0</p>
+                                                <small class="text-muted">Per Million: <span id="country-tests-per-million" class="text-info">0</span></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card border-0 bg-light h-100">
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Population</h5>
+                                                <p id="country-population" class="display-6 text-primary mb-0">0</p>
+                                                <small class="text-muted">Cases per Million: <span id="country-cases-per-million" class="text-primary">0</span></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Charts Section -->
+            <div class="row mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="card border-0 shadow h-100">
+                        <div class="card-header bg-light">
+                            <h3 class="card-title">Daily New Cases</h3>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="cases-chart" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow h-100">
+                        <div class="card-header bg-light">
+                            <h3 class="card-title">Statistics Breakdown</h3>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="stats-chart" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Top Countries Section -->
+            <h3 class="mb-4">Most Affected Countries</h3>
+            <div id="top-countries" class="row g-4 mb-4">
+                <div class="col-12 text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p>Loading country data...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Global Trends Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Global Trends</h2>
+            <div class="card border-0 shadow mb-5">
+                <div class="card-body">
+                    <canvas id="global-trend-chart" height="300"></canvas>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card border-0 shadow h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="card-title mb-0">Data Interpretation</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>COVID-19 data reveals several important trends:</p>
+                            <ul>
+                                <li>The pandemic has affected countries differently based on population density, healthcare infrastructure, and policy responses.</li>
+                                <li>Vaccination efforts have significantly reduced severe cases and mortality in many regions.</li>
+                                <li>New variants continue to emerge, causing fluctuations in case numbers worldwide.</li>
+                                <li>Testing capacity varies greatly between countries, affecting reported case numbers.</li>
+                            </ul>
+                            <p class="mb-0">These statistics help governments and health organizations formulate appropriate responses to control the spread of the virus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow h-100">
+                        <div class="card-header bg-info text-white">
+                            <h3 class="card-title mb-0">Data Sources</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>The data presented on this page comes from the following sources:</p>
+                            <ul>
+                                <li><strong>disease.sh</strong> - An open API for disease-related statistics</li>
+                                <li><strong>Johns Hopkins University</strong> - Maintains a comprehensive COVID-19 database</li>
+                                <li><strong>World Health Organization (WHO)</strong> - Provides official global health data</li>
+                                <li><strong>National health ministries</strong> - Supply country-specific information</li>
+                            </ul>
+                            <p class="mb-0">Data is updated regularly, but there may be delays or discrepancies between different reporting sources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+{% endblock %}
