@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+
+{% block title %} - Self-Assessment{% endblock %}
+
+{% block content %}
+    <!-- Header Section -->
+    <section class="py-5 bg-warning text-dark text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">COVID-19 Self-Assessment</h1>
+            <p class="lead">Complete this quick assessment to check your symptoms</p>
+            <div class="alert alert-info d-inline-block mt-3">
+                <i class="fas fa-info-circle me-2"></i> This is not a medical diagnosis. Seek professional medical advice if you're feeling unwell.
+            </div>
+        </div>
+    </section>
+    
+    <!-- Assessment Form Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div id="assessment-start" class="text-center py-3">
+                                <h2 class="mb-4">COVID-19 Symptom Checker</h2>
+                                <p class="lead mb-4">This self-assessment will help you determine if you might have COVID-19 symptoms and what actions you should take.</p>
+                                <button id="start-assessment" class="btn btn-primary btn-lg">Start Assessment</button>
+                            </div>
+                            
+                            <div id="assessment-form" style="display: none;">
+                                <div id="progress-container" class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Progress</span>
+                                        <span id="question-progress">Question 1 of 8</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div id="progress-bar" class="progress-bar bg-primary" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                
+                                <div id="questions-container">
+                                    <!-- Question 1 -->
+                                    <div class="question-slide" data-question="1">
+                                        <h4>Do you have a fever (temperature above 37.8°C/100°F) or feeling feverish?</h4>
+                                        <div class="form-check mt-4">
+                                            <input class="form-check-input" type="radio" name="fever" id="fever-yes" value="yes">
+                                            <label class="form-check-label" for="fever-yes">Yes</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="fever" id="fever-no" value="no">
+                                            <label class="form-check-label" for="fever-no">No</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="fever" id="fever-unsure" value="unsure">
+                                            <label class="form-check-label" for="fever-unsure">Unsure</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Question 2 -->
+                                    <div class="question-slide" data-question="2" style="display: none;">
+                                        <h4>Do you have a new or worsening cough?</h4>
+                                        <div class="form-check mt-4">
+                                            <input class="form-check-input" type="radio" name="cough" id="cough-yes" value="yes">
+                                            <label class="form-check-label" for="cough-yes">Yes</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="cough" id="cough-no" value="no">
+                                            <label class="form-check-label" for="cough-no">No</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Question 3 -->
+                                    <div class="question-slide" data-question="3" style="display: none;">
+                                        <h4>Do you have shortness of breath or difficulty breathing?</h4>
+                                        <div class="form-check mt-4">
+                                            <input class="form-check-input" type="radio" name="breathing" id="breathing-yes" value="yes">
+                                            <label class="form-check-label" for="breathing-yes">Yes</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="breathing" id="breathing-no" value="no">
+                                            <label class="form-check-label" for="breathing-no">No</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Question 4 -->
+                                    <div class="question-slide" data-question="4" style="display: none;">
+                                        <h4>Have you experienced a loss of smell or taste?</h4>
+                                        <div class="form-check mt-4">
+                                            <input class="form-check-input" type="radio" name="smell-taste" id="smell-yes" value="yes">
+                                            <label class="form-check-label" for="smell-yes">Yes</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="smell-taste" id="smell-no" value="no">
+                                            <label class="form-check-label" for="smell-no">No</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="smell-taste" id="smell-unsure" value="unsure">
+                                            <label class="form-check-label" for="smell-unsure">Unsure</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Question 5 -->
+                                    <div class="question-slide" data-question="5" style="display: none;">
+                                        <h4>Are you experiencing unusual fatigue or tiredness?</h4>
+                                        <div class="form-check mt-4">
+                                            <input class="form-check-input" type="radio" name="fatigue" id="fatigue-yes" value="yes">
+                                            <label class="form-check-label" for="fatigue-yes">Yes</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="fatigue" id="fatigue-no" value="no">
+                                            <label class="form-check-label" for="fatigue-no">No</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Question 6 -->
+                                    <div class="question-slide" data-question="6" style="display: none;">
+                                        <h4>Do you have muscle aches, sore throat, headache, runny nose, or diarrhea?</h4>
+                                        <div class="form-check mt-4">
+                                            <input class="form-check-input" type="radio" name="other-symptoms" id="other-yes" value="yes">
+                                            <label class="form-check-label" for="other-yes">Yes</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="other-symptoms" id="other-no" value="no">
+                                            <label class="form-check-label" for="other-no">No</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Question 7 -->
+                                    <div class="question-slide" data-question="7" style="display: none;">
+                                        <h4>Have you been in close contact with someone who has confirmed COVID-19 in the past 14 days?</h4>
+                                        <div class="form-check mt-4">
+                                            <input class="form-check-input" type="radio" name="contact" id="contact-yes" value="yes">
+                                            <label class="form-check-label" for="contact-yes">Yes</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="contact" id="contact-no" value="no">
+                                            <label class="form-check-label" for="contact-no">No</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="contact" id="contact-unsure" value="unsure">
+                                            <label class="form-check-label" for="contact-unsure">Unsure</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Question 8 -->
+                                    <div class="question-slide" data-question="8" style="display: none;">
+                                        <h4>Do you have any underlying medical conditions (heart disease, diabetes, respiratory condition, etc.)?</h4>
+                                        <div class="form-check mt-4">
+                                            <input class="form-check-input" type="radio" name="medical-condition" id="medical-yes" value="yes">
+                                            <label class="form-check-label" for="medical-yes">Yes</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="medical-condition" id="medical-no" value="no">
+                                            <label class="form-check-label" for="medical-no">No</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="medical-condition" id="medical-unsure" value="unsure">
+                                            <label class="form-check-label" for="medical-unsure">Unsure</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button id="prev-btn" class="btn btn-outline-primary" disabled>Previous</button>
+                                    <button id="next-btn" class="btn btn-primary">Next</button>
+                                </div>
+                            </div>
+                            
+                            <div id="assessment-results" class="py-4" style="display: none;">
+                                <h2 class="text-center mb-4">Your Assessment Result</h2>
+                                
+                                <div id="result-high-risk" class="alert alert-danger" style="display: none;">
+                                    <h4 class="alert-heading"><i class="fas fa-exclamation-triangle me-2"></i> High Risk - Seek Medical Attention</h4>
+                                    <p>Based on your responses, you may have symptoms consistent with COVID-19. You should:</p>
+                                    <ul>
+                                        <li>Self-isolate immediately</li>
+                                        <li>Contact your healthcare provider or local COVID-19 hotline</li>
+                                        <li>Get tested for COVID-19 as soon as possible</li>
+                                        <li>Monitor your symptoms closely, especially breathing difficulties</li>
+                                    </ul>
+                                    <hr>
+                                    <p class="mb-0">If you develop severe symptoms such as difficulty breathing, persistent chest pain, confusion, or bluish lips or face, seek emergency medical care immediately.</p>
+                                </div>
+                                
+                                <div id="result-medium-risk" class="alert alert-warning" style="display: none;">
+                                    <h4 class="alert-heading"><i class="fas fa-exclamation-circle me-2"></i> Medium Risk - Monitor Symptoms</h4>
+                                    <p>Based on your responses, you have some symptoms that could be consistent with COVID-19. You should:</p>
+                                    <ul>
+                                        <li>Self-isolate as a precaution</li>
+                                        <li>Monitor your symptoms closely</li>
+                                        <li>Consider getting tested for COVID-19</li>
+                                        <li>Contact your healthcare provider if symptoms worsen</li>
+                                    </ul>
+                                    <hr>
+                                    <p class="mb-0">Continue to follow preventive measures such as washing hands, wearing a mask, and maintaining social distance.</p>
+                                </div>
+                                
+                                <div id="result-low-risk" class="alert alert-success" style="display: none;">
+                                    <h4 class="alert-heading"><i class="fas fa-check-circle me-2"></i> Low Risk - Continue Preventive Measures</h4>
+                                    <p>Based on your responses, your risk appears to be low. You should:</p>
+                                    <ul>
+                                        <li>Continue to follow preventive measures</li>
+                                        <li>Monitor for any new symptoms</li>
+                                        <li>Stay informed about local COVID-19 developments</li>
+                                    </ul>
+                                    <hr>
+                                    <p class="mb-0">If you develop symptoms in the future, take this assessment again or contact your healthcare provider.</p>
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <button id="restart-assessment" class="btn btn-outline-primary me-2">Take Assessment Again</button>
+                                    <a href="/" class="btn btn-primary">Return to Home</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Disclaimer Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="mb-4"><i class="fas fa-exclamation-triangle text-warning me-2"></i> Important Disclaimer</h3>
+                            <p>This self-assessment tool is for informational purposes only and does not provide medical advice, diagnosis, or treatment. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment.</p>
+                            <p>Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</p>
+                            <p>Never disregard professional medical advice or delay in seeking it because of something you have read on this website.</p>
+                            <p class="mb-0">If you think you may have a medical emergency, call your doctor or emergency services immediately.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/assessment.js') }}"></script>
+{% endblock %}
