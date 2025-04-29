@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+
+{% block title %} - Symptoms & Prevention{% endblock %}
+
+{% block content %}
+    <!-- Header Section -->
+    <section class="py-5 bg-info text-light text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Symptoms & Prevention</h1>
+            <p class="lead">Learn about COVID-19 symptoms and how to protect yourself and others</p>
+        </div>
+    </section>
+    
+    <!-- Symptoms Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="border-bottom pb-3 mb-4">Common Symptoms</h2>
+                    <p class="lead">COVID-19 affects different people in different ways. Most infected people will develop mild to moderate symptoms.</p>
+                    
+                    <div class="card mb-4 border-0 shadow-sm">
+                        <div class="card-header bg-danger text-white">
+                            Most Common Symptoms
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fas fa-thermometer-half text-danger me-2"></i> Fever</li>
+                                <li class="list-group-item"><i class="fas fa-head-side-cough text-danger me-2"></i> Dry cough</li>
+                                <li class="list-group-item"><i class="fas fa-tired text-danger me-2"></i> Fatigue</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4 border-0 shadow-sm">
+                        <div class="card-header bg-warning text-dark">
+                            Less Common Symptoms
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fas fa-dizzy text-warning me-2"></i> Headache</li>
+                                <li class="list-group-item"><i class="fas fa-head-side-virus text-warning me-2"></i> Loss of taste or smell</li>
+                                <li class="list-group-item"><i class="fas fa-lungs-virus text-warning me-2"></i> Sore throat</li>
+                                <li class="list-group-item"><i class="fas fa-allergies text-warning me-2"></i> Runny nose</li>
+                                <li class="list-group-item"><i class="fas fa-grip-lines text-warning me-2"></i> Muscle or joint pain</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-dark text-white">
+                            Severe Symptoms
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fas fa-lungs text-dark me-2"></i> Difficulty breathing or shortness of breath</li>
+                                <li class="list-group-item"><i class="fas fa-heartbeat text-dark me-2"></i> Chest pain or pressure</li>
+                                <li class="list-group-item"><i class="fas fa-comments text-dark me-2"></i> Loss of speech or movement</li>
+                            </ul>
+                            <div class="alert alert-danger mt-3 mb-0">
+                                <i class="fas fa-exclamation-triangle me-2"></i> If you have severe symptoms, seek medical attention immediately!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h2 class="border-bottom pb-3 mb-4">When to Seek Medical Attention</h2>
+                    <p class="lead">Most people with COVID-19 recover without special treatment. However, you should seek immediate medical attention if you experience:</p>
+                    
+                    <div class="alert alert-danger mb-4">
+                        <h5><i class="fas fa-exclamation-circle me-2"></i> Emergency Warning Signs</h5>
+                        <ul class="mb-0">
+                            <li>Difficulty breathing or shortness of breath</li>
+                            <li>Persistent pain or pressure in the chest</li>
+                            <li>New confusion or inability to wake or stay awake</li>
+                            <li>Bluish lips or face</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-info text-white">
+                            Symptom Timeline
+                        </div>
+                        <div class="card-body">
+                            <p>Symptoms may appear 2-14 days after exposure to the virus. The median incubation period is 5-6 days.</p>
+                            <div class="progress mb-3" style="height: 30px;">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                    2-14 Days
+                                </div>
+                            </div>
+                            <small class="text-muted">On average, symptoms appear around 5-6 days after exposure</small>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <h5><i class="fas fa-user-md me-2"></i> When to Get Tested</h5>
+                        <p class="mb-0">If you develop symptoms, have been in close contact with someone known to have COVID-19, or have attended an event where social distancing was challenging, consider getting tested.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Prevention Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Preventive Measures</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-hands-wash text-primary fa-3x mb-3"></i>
+                            <h3 class="card-title">Hand Hygiene</h3>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Wash hands frequently for at least 20 seconds</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Use soap and water or alcohol-based hand sanitizer</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Avoid touching face with unwashed hands</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-head-side-mask text-primary fa-3x mb-3"></i>
+                            <h3 class="card-title">Mask Wearing</h3>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Wear a mask in public settings</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Ensure mask covers nose and mouth</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> N95/KN95 masks offer better protection</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-people-arrows text-primary fa-3x mb-3"></i>
+                            <h3 class="card-title">Social Distancing</h3>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Maintain at least 6 feet (2 meters) distance</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Avoid crowds and poorly ventilated spaces</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Work from home when possible</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4 mt-2">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-pump-soap text-primary fa-3x mb-3"></i>
+                            <h3 class="card-title">Cleaning</h3>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Clean and disinfect frequently touched surfaces</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Use appropriate disinfectants</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Focus on high-touch areas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-wind text-primary fa-3x mb-3"></i>
+                            <h3 class="card-title">Ventilation</h3>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Improve ventilation by opening windows</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Use air purifiers if available</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Avoid enclosed spaces with poor airflow</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-syringe text-primary fa-3x mb-3"></i>
+                            <h3 class="card-title">Vaccination</h3>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Get vaccinated when eligible</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Complete the full vaccination course</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Get booster shots as recommended</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="/assessment" class="btn btn-primary btn-lg">Take Self-Assessment</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- WHO Guidelines Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="mb-4">WHO Guidelines</h2>
+                    <p class="lead">The World Health Organization provides comprehensive guidelines for COVID-19 prevention and management.</p>
+                    <p>These guidelines are continuously updated based on the latest scientific research and global situation.</p>
+                    <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" target="_blank" class="btn btn-outline-primary">
+                        <i class="fas fa-external-link-alt me-2"></i> Visit WHO Website
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">Key WHO Recommendations</h4>
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-shield-virus text-info fa-2x"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h5>Protect yourself and others</h5>
+                                    <p class="mb-0">Get vaccinated, maintain physical distance, wear a mask, and clean your hands frequently.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-head-side-cough-slash text-info fa-2x"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h5>If you're feeling unwell</h5>
+                                    <p class="mb-0">Stay home, self-isolate, and seek medical attention if you develop serious symptoms.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-virus-slash text-info fa-2x"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h5>Break the chain of transmission</h5>
+                                    <p class="mb-0">Follow local guidance, participate in testing efforts, and cooperate with contact tracing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
